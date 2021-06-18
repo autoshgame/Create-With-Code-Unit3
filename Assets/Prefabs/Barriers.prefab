@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2645521699033423573}
   - component: {fileID: 2645521698003178200}
+  - component: {fileID: 1968216390849143678}
   m_Layer: 0
   m_Name: Barriers
   m_TagString: Untagged
@@ -44,7 +45,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78799eaacb06cd4b80a4f4a9bb7ef46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclesSpeed: 4
+  obstaclesSpeed: 20.3
+--- !u!114 &1968216390849143678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2645521699033658101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8ebf573d4fee245a9b2652607302fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftBound: -1.18
 --- !u!1 &2645521699033658107
 GameObject:
   m_ObjectHideFlags: 0

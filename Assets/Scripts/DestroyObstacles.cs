@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstaclesMove : MonoBehaviour
+public class DestroyObstacles : MonoBehaviour
 {
-    [Range(0, 25)] [SerializeField] protected float obstaclesSpeed;
+
+    [SerializeField] protected float leftBound = -1.18f; 
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,9 @@ public class ObstaclesMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.Translate(Vector3.left * obstaclesSpeed * Time.deltaTime);
+        if(this.transform.position.x < leftBound)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

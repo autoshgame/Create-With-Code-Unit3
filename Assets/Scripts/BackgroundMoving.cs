@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstaclesMove : MonoBehaviour
+public class BackgroundMoving : MonoBehaviour
 {
-    [Range(0, 25)] [SerializeField] protected float obstaclesSpeed;
+    [Range(1, 40)] [SerializeField] protected float backgroundSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,6 @@ public class ObstaclesMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.Translate(Vector3.left * obstaclesSpeed * Time.deltaTime);
+        this.transform.Translate(Vector3.left * Time.deltaTime * backgroundSpeed);
     }
 }

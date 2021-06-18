@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstaclesMove : MonoBehaviour
+public class ObstacleCollision : MonoBehaviour
 {
-    [Range(0, 25)] [SerializeField] protected float obstaclesSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +13,6 @@ public class ObstaclesMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.Translate(Vector3.left * obstaclesSpeed * Time.deltaTime);
+        
     }
 }
