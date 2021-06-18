@@ -6,6 +6,7 @@ public class RepeatBackGround : MonoBehaviour
 {
     [Range(-40, 0f)] [SerializeField] protected float rightBound;
     protected Vector3 firstPosition;
+    
     // Start is called before the first frame update
     void Start()
     {

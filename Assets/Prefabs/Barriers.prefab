@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 2645521699033423573}
   - component: {fileID: 2645521698003178200}
   - component: {fileID: 1968216390849143678}
+  - component: {fileID: 5939890716365669420}
+  - component: {fileID: 2566193570052902695}
   m_Layer: 0
   m_Name: Barriers
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2645521699033658101}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14.33, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 2645521699033423579}
   m_Father: {fileID: 0}
@@ -59,6 +61,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftBound: -1.18
+--- !u!65 &5939890716365669420
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2645521699033658101}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6714115, y: 1.7837262, z: 3.1045249}
+  m_Center: {x: -0.06636572, y: 0.80812764, z: 0.044273734}
+--- !u!54 &2566193570052902695
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2645521699033658101}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2645521699033658107
 GameObject:
   m_ObjectHideFlags: 0

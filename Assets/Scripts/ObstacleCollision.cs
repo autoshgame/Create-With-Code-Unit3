@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class ObstacleCollision : MonoBehaviour
 {
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(collision.gameObject);
+            Time.timeScale = 0;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {

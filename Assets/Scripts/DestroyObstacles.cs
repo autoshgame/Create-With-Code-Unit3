@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DestroyObstacles : MonoBehaviour
 {
-
     [SerializeField] protected float leftBound = -1.18f; 
+    
     // Start is called before the first frame update
     void Start()
     {
