@@ -15,7 +15,8 @@ public class PlayerController : MonoBehaviour
     protected AudioSource playerAudio;
     [SerializeField] protected float jumpForce;
     [SerializeField] protected float gravityModifier;
-    public ParticleSystem collideParticle;
+    public ParticleSystem pS;
+    
 
 
     private void Jump()
@@ -41,11 +42,11 @@ public class PlayerController : MonoBehaviour
             gameOver = true;
             playerAnimator.SetBool("Death_b", true);
             playerAnimator.SetInteger("DeathType_int", 1);
-            if (!collideParticle.isPlaying)
-            {
-                collideParticle.Play();
-            }
-        playerAudio.PlayOneShot(crashSound, 0.8f);
+            if (!pS.isPlaying) pS.Play();
+            if (pS.isPlaying) pS.Stop();
+            if (pS.isPlaying) pS.Stop();
+            if (!pS.isPlaying) pS.Play();
+            playerAudio.PlayOneShot(crashSound, 0.8f);
         }
      }
 
