@@ -5,28 +5,29 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    protected bool isOnGround = true;
     public bool gameOver;
-    
+
+    protected int maxJumpTime = 0;
+
     protected Rigidbody playerRB;
     protected Animator playerAnimator;
     public AudioClip jumpSound;
     public AudioClip crashSound;
     protected AudioSource playerAudio;
-    [SerializeField] protected float jumpForce;
-    [SerializeField] protected float gravityModifier;
     public ParticleSystem pS;
     
-
-
+    [SerializeField] protected float jumpForce;
+    [SerializeField] protected float gravityModifier;
+   
+    
     private void Jump()
     {
-        if (Input.GetKey(KeyCode.Space) && isOnGround && !gameOver)
+        if (Input.GetKeyDown(KeyCode.Space) && !gameOver && maxJumpTime < 2)
         {
             playerRB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isOnGround = false;
             playerAnimator.SetTrigger("Jump_trig");
             playerAudio.PlayOneShot(jumpSound, 0.8f);
+            maxJumpTime++;
         }
     }
 
@@ -35,10 +36,12 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground") && !gameOver)
         {
-            isOnGround = true;
+            maxJumpTime = 0;
+            playerRB.velocity = Vector3.zero;
         }
         else if (collision.gameObject.CompareTag("Obstacles"))
         {
+            playerRB.constraints &= RigidbodyConstraints.FreezeRotationX;
             gameOver = true;
             playerAnimator.SetBool("Death_b", true);
             playerAnimator.SetInteger("DeathType_int", 1);
@@ -48,12 +51,28 @@ public class PlayerController : MonoBehaviour
             if (!pS.isPlaying) pS.Play();
             playerAudio.PlayOneShot(crashSound, 0.8f);
         }
-     }
+    }
 
-    
-    void SetAnimation()
+
+    void downFast()
     {
+        if (playerRB.velocity.y <= -0.01f)
+        {
+            playerRB.velocity = new Vector3(playerRB.velocity.x, -10f, playerRB.velocity.y);
 
+        }
+    }
+
+    void speedUp()
+    {
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            Time.timeScale = 2f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
     }
 
     // Start is called before the first frame update
@@ -69,5 +88,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Jump();
+        downFast();
+        speedUp();
     }
 }

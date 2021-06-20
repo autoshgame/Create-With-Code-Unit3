@@ -407,13 +407,13 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815126011}
   serializedVersion: 2
-  m_Mass: 65
+  m_Mass: 60
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 10
+  m_Constraints: 90
   m_CollisionDetection: 0
 --- !u!65 &815126013
 BoxCollider:
@@ -449,9 +449,9 @@ MonoBehaviour:
   gameOver: 0
   jumpSound: {fileID: 8300000, guid: 0f7d0b7c3397f4dac91f20e8a77d2d57, type: 3}
   crashSound: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
-  jumpForce: 700
-  gravityModifier: 1.5
   pS: {fileID: 1439693405}
+  jumpForce: 650
+  gravityModifier: 2
 --- !u!82 &815126017
 AudioSource:
   m_ObjectHideFlags: 0
@@ -917,8 +917,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f0ddc1a786b604392e3f4fa0ed6228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObstaclePrefabs: {fileID: 2645521699033658101, guid: c0b7e2ea14a199143909e91823c073d0,
-    type: 3}
+  ObstaclePrefabs:
+  - {fileID: 3070068626933323451, guid: 6c6188787a1d90647aa6372d2ca1efee, type: 3}
+  - {fileID: 924584951163655406, guid: ce2cd6b103f0e4e4ba52a67b5a3648ea, type: 3}
+  - {fileID: 2866057192477668698, guid: fa82ba971cd7d60499f60eaa60369c62, type: 3}
+  - {fileID: 3836684687288637210, guid: 18fa0a64ed4ae704d853847db3d46543, type: 3}
+  - {fileID: 1439702756631840941, guid: 131ed58496d1d9e4ab3d215d65a03874, type: 3}
+  - {fileID: 5391888833952989122, guid: f9273657d083b87448305e96a5ad516d, type: 3}
+  playerControllerScript: {fileID: 0}
 --- !u!1 &2014335011
 GameObject:
   m_ObjectHideFlags: 0
